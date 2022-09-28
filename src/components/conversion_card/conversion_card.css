@@ -1,11 +1,12 @@
 .card-container {
   box-shadow: 0px 0px 15px -5px;
-  width: 300px;
-  height: 100px;
+  width: 20%;
+  height: 150px;
   overflow: hidden;
   margin: 0 auto;
   margin-top: 200px;
   margin-right: 50px;
+  position: relative;
 }
 
 .card-container:hover {
@@ -22,13 +23,34 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0; 
 }
 
-.text-container {
+.text-container-1 {
     font-size: 20px;
     font-weight: 600;
     color: #000000;
     /* align-self: center; */
-    display: inline-flex;
-    margin: 20px 0px 0px 0px;
+    display: flex;
+    margin: 0px 0px 0px 60px;
     justify-content: center;
     justify-self: center;
+    position: absolute;
+    top: 23%;
+}
+
+.text-container-2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    /* align-self: center; */
+    display: flex;
+    margin: 0px 0px 0px 60px;
+    justify-content: center;
+    justify-self: center;
+    position: absolute;
+    top: 60%;
+}
+
+.input-field {
+    border-radius:10px;
+    padding: 2%;
+    justify-content: center;
 }
