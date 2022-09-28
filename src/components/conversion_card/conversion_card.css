@@ -4,15 +4,15 @@
   height: 150px;
   overflow: hidden;
   margin: 0 auto;
-  margin-top: 200px;
-  margin-right: 50px;
+  margin-top: 15%;
+  margin-right: 5%;
   position: relative;
   border-radius: 15px;
   background: #3b3b3b;
 }
 
 .card-container:hover {
-  box-shadow: 0px 0px 15px -2px;
+  box-shadow: 0% 10% 65% -40%;
   transform: scale(1.1);
   background: #0a0934;
 }
@@ -22,7 +22,7 @@
     position: absolute;
     display: block;
     top: 0;
-    left: -50px;
+    left: -10%;
     width: 70%;
     height: 100%;
     background: linear-gradient(90deg, transparent, #ffffff71,transparent);
@@ -47,12 +47,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .text-container-1 {
-    font-size: 20px;
+    font-size: 20%;
     font-weight: 600;
     color: #000000;
     /* align-self: center; */
     display: flex;
-    margin: 0px 0px 0px 60px;
+    margin: 0% 0% 0% 18%;
     justify-content: center;
     justify-self: center;
     position: absolute;
@@ -60,12 +60,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .text-container-2 {
-    font-size: 20px;
+    font-size: 20%;
     font-weight: 600;
     color: #000000;
     /* align-self: center; */
     display: flex;
-    margin: 0px 0px 0px 60px;
+    margin: 0% 0% 0% 18%;
     justify-content: center;
     justify-self: center;
     position: absolute;
@@ -75,11 +75,18 @@ input[type=number]::-webkit-outer-spin-button {
 .input-field {
     border-radius:10px;
     padding: 2%;
-    justify-content: center;
+    /* justify-content: center; */
+    margin: 0 auto;
+  text-align: center;
 }
 
 .currency-selector {
     border-radius:10px;
     padding: 4%;
     margin-left: 10%;
+}
+
+.currency-selector:focus {
+    border: 0;
+    outline: 0;
 }
