@@ -15,7 +15,7 @@
 
 .filterHeader:hover {
     box-shadow: 0% 10% 65% -40%;
-    transform: scale(1.1);
+    transform: scaleY(1.1);
     background: #0a0934;
   }
 
@@ -26,7 +26,7 @@
     top: 0;
     left: -1%;
     width: 7%;
-    height: 70px;
+    height: 65px;
     background: linear-gradient(90deg, transparent, #ffffff71,transparent);
     transition: all 1s;
     z-index: 1;
