@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import './conversion_card.css'
 
-export default class ConversionCard extends Component {
-  render() {
+export default function ConversionCard() {
     return (
       <div className='card-container' align="center">
+        <div className='text-container-3'>
+          <h3>CONVERT IT!</h3>
+        </div>
         <div className='text-container-1'>
           <input className='input-field' type="number" placeholder='FROM' />
           <select className='currency-selector'>
@@ -18,6 +20,5 @@ export default class ConversionCard extends Component {
           </select>
         </div>
       </div>
-    )
-  }
+    );
 }

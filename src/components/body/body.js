@@ -9,7 +9,7 @@ class Body extends React.Component {
             <div className='body'>
                 <LineChart />
                 <div className='cc-card'>
-                    <ConversionCard />
+                    <ConversionCard currencies={[]} />
                 </div>
 
             </div >

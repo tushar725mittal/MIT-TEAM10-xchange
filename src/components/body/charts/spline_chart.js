@@ -8,7 +8,7 @@ import { get_data_range } from '../../../services/data_fetch';
 function SplineChart() {
     useEffect(() => {
 
-        get_data_range({ currency_from: 'USD', currency_to: 'INR', date_begin: '2020-01-01', date_end: '2020-12-31' }).then((newData) => {
+        get_data_range({ currency_from: 'EUR', currency_to: 'INR', date_begin: '2020-01-01', date_end: '2020-12-31' }).then((newData) => {
 
             setData(newData['data'])
             console.log(data[0]);
