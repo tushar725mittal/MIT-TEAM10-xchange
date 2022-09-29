@@ -3,10 +3,44 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 10%;
     height: 50px;
-    background-color: #f5f5f5;
+    background: #3b3b3b;
     border-bottom: 1px solid #e0e0e0;
+    border-radius: 15px;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    overflow: hidden;
+}
+
+.filterHeader:hover {
+    box-shadow: 0% 10% 65% -40%;
+    transform: scaleY(1.1);
+    background: #0a0934;
+    overflow: hidden;
+  }
+
+.filterHeader::before {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    display: block;
+    top: 0;
+    left: -1%;
+    width: 7%;
+    height: 65px;
+    background: linear-gradient(90deg, transparent, #ffffff71,transparent);
+    transition: all 1s;
+    z-index: 1;
+    transform: translateX(-30px) skew(-20deg);
+}
+
+
+.filterHeader:hover::before {
+    
+    transform: translateX(1550px) skew(-20deg);
+    overflow: hidden;
 }
 
 /* .wmqy {

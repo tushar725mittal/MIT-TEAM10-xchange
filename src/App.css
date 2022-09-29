@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.div1 {
+  width: 60%;
+}
+
+.root {
+  background-color: #0f1012;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -17,6 +26,7 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -32,6 +42,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

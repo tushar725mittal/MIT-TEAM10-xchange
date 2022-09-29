@@ -1,0 +1,28 @@
+.body {
+    display: block;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 2%;
+    /* height: 50px; */
+    width: 94%;
+    background-color: #282727;
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: 1%;
+    margin-left: 1%;
+    border-radius: 20px;
+}
+
+.div1 {
+    float: inline-start;
+}
+
+
+.div1 {
+    float: inline-end;
+}
+
+.cc-card {
+    display: flex;
+    justify-content: center;
+}

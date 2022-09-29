@@ -1,14 +1,11 @@
 import './App.css';
-import ConversionCard from './components/conversion_card/conversion_card';
+import Body from './components/body/body';
 import FilterHeader from './components/filter_header/filter_header';
-import LineChart from './components/charts/line_chart';
-
 function App() {
   return (
-    <div>
+    <div className='main-app'>
       <FilterHeader />
-      <LineChart />
-      <ConversionCard />
+      <Body />
     </div>
   )
 }

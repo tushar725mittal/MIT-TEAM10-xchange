@@ -8,7 +8,7 @@ import CustomDatePicker from './components/date_picker/date_picker';
 class FilterHeader extends React.Component {
     render() {
         return (
-            <div>
+            <div className='header-box'>
                 <div className="filterHeader">
                     <CurrencySelector />
                     <WMQY type="W" />
