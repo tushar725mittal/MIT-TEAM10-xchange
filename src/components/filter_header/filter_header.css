@@ -13,6 +13,31 @@
     margin-right: 1%;
 }
 
+.filterHeader:hover {
+    box-shadow: 0% 10% 65% -40%;
+    transform: scale(1.1);
+    background: #0a0934;
+  }
+
+.filterHeader::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -1%;
+    width: 7%;
+    height: 70px;
+    background: linear-gradient(90deg, transparent, #ffffff71,transparent);
+    transition: all 1s;
+    z-index: 1;
+    transform: translateX(-120px) skew(-20deg);
+}
+
+
+.filterHeader:hover::before {
+    
+    transform: translateX(1200px) skew(-20deg);
+}
 
 /* .wmqy {
     display: flex;
