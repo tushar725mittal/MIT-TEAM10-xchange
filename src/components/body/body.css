@@ -21,3 +21,8 @@
 .div1 {
     float: inline-end;
 }
+
+.cc-card {
+    display: flex;
+    justify-content: center;
+}

@@ -1,11 +1,15 @@
+import './currency_selector.css';
+
 function CurrencySelector() {
     return (
-        <div id="currencySelector">
-            <select>
+        <div className='div-selector'>
+            <select className='currency-selector'>
                 <option>USD</option>
                 <option>INR</option>
                 <option>LKR</option>
-            </select> vs <select>
+            </select> 
+            <div className='text-container'> V/S</div>
+            <select className='currency-selector'>
                 <option>USD</option>
                 <option>INR</option>
                 <option>LKR</option>

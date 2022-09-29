@@ -1,11 +1,9 @@
 .card-container {
   box-shadow: 0px 0px 15px -5px;
-  width: 20%;
-  height: 150px;
+  width: 22%;
+  height: 205px;
   overflow: hidden;
   margin: 0 auto;
-  margin-top: 15%;
-  margin-right: 5%;
   position: relative;
   border-radius: 15px;
   background: #3b3b3b;
@@ -50,32 +48,41 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 20%;
     font-weight: 600;
     color: #000000;
-    /* align-self: center; */
     display: flex;
     margin: 0% 0% 0% 18%;
     justify-content: center;
     justify-self: center;
     position: absolute;
-    top: 20%;
+    top: 40%;
 }
 
 .text-container-2 {
     font-size: 20%;
     font-weight: 600;
     color: #000000;
-    /* align-self: center; */
     display: flex;
     margin: 0% 0% 0% 18%;
     justify-content: center;
     justify-self: center;
     position: absolute;
-    top: 58%;
+    top: 65%;
+}
+
+.text-container-3 {
+    font-size: 120%;
+    font-weight: 600;
+    color: #000000;
+    display: flex;
+    margin: 0% 0% 0% 18%;
+    justify-content: center;
+    justify-self: center;
+    position: absolute;
+    top: 8%;
 }
 
 .input-field {
     border-radius:10px;
     padding: 2%;
-    /* justify-content: center; */
     margin: 0 auto;
   text-align: center;
 }
@@ -89,4 +96,8 @@ input[type=number]::-webkit-outer-spin-button {
 .currency-selector:focus {
     border: 0;
     outline: 0;
+}
+
+h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

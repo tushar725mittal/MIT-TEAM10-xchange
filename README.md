@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+#  Exchange Rate Visualiser 
+## [For Northern Trust Summer Internship hackathon]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This is a simple web app that visualises the exchange rate between two currencies over time. It uses the CSV data provided in the email. The data is stored in ./data folder. 
 
-In the project directory, you can run:
+The app is built using Flask, ReactJS and MongoDB.
 
-### `npm start`
+## How to run
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Install dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+For the flask App : 
+```
+pip install -r requirements.txt
+```
 
-### `npm test`
+For the React App : 
+```
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup keys for mongodb by saving the below lines to env in project root folder
+```
+MONGO_ID = reader_publicacc
+MONGO_PASSWORD = exCiDmgJof6YekT3
+```
+Note : The above keys have reading permissions only [Writing permissions are required for mongoautomate.py only] 
 
-### `npm run build`
+The flask api is also depl
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Automation folder contains the python script for extracting, cleaning and merging data from csv files into a common csv.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- ```mongoautomate.py``` is a python script that automates the process of inserting data into MongoDB. It is run using ```python mongoautomate.py```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ```./backend/backend.py``` is the flask app that serves the end points for the React App.
 
-### `npm run eject`
+The Tests for the flask app are in ```./backend/backend_tests.py```, and can be run using ```python backend_tests.py```. The tests for automation are in ```./automation/automate_tests.py```, and can be run using ```python automate_tests.py```.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Backend is fully functional with all requirements, for conversion of single currency with usd, conversion between any two currencies, option to select date range and conversion of multiple currencies with usd or any other currency. And ability to get daily, weekly, monthly and yearly data of any currency with any other currency.
+api is also hosted at : Replit [https://mit-team10-xchange.jxt1n.repl.co/]
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. Run the flask app
 
-## Learn More
+```
+cd backend
+python backend.py
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Run the React app
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+npm start
+```

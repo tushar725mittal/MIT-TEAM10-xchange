@@ -1,0 +1,22 @@
+.currency-selector {
+    border-radius:10px;
+    padding: 4%;
+    margin-left: 10%;
+}
+
+.div-selector {
+    display: flex;
+    flex-direction: row;
+}
+
+.text-container {
+    font-size: 125%;
+    font-weight: 600;
+    color: black;
+    display: flex;
+    margin: 2% 0% 0% 10%;
+    justify-content: center;
+    /* justify-self: center; */
+    /* position: absolute; */
+    /* top: 20%; */
+}
