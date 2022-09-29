@@ -7,8 +7,14 @@ function App() {
   return (
     <div>
       <FilterHeader />
-      <LineChart />
-      <ConversionCard />
+      <div align='horizontal'>
+        <div className='div1'>
+          <LineChart />
+        </div>
+        <div className='div2'>
+          <ConversionCard />
+        </div>
+      </div>
     </div>
   )
 }
