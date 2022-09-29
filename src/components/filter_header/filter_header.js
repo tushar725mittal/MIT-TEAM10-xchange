@@ -9,12 +9,12 @@ class FilterHeader extends React.Component {
     constructor(props) {
         super(props);
         // console.log(props.filterType);
-        this.filterType = props.filterType;
+        this.FilterType = props.FilterType;
 
     }
 
-    filterType() {
-        // console.log("used");
+    FilterType() {
+
     }
 
     render() {

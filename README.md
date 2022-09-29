@@ -55,3 +55,12 @@ python backend.py
 ```
 npm start
 ```
+
+
+## Progress on frontend 
+- Partially functional UI working, with dropdowns for currency selection, date range selection and radio buttons for selecting the type of data to be displayed, but the currency currently is set to usd to inr.
+- Yearly, monthly and weekly data is displayed on the graph.
+- API calls to backend are under progress, with backend being fully functional.
+
+### Libraries used 
+- Syncfusion for data visualization
