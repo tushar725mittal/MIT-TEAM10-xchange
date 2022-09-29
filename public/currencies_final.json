@@ -1,0 +1,210 @@
+{
+    "Algerian dinar": {
+        "shortform":"DZD",
+        "img":"<https://flagicons.lipis.dev/flags/4x3/dz.svg>"
+    },
+    "Australian dollar": {
+      "shortform": "AUD",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/au.svg>"
+    },
+    "Botswana pula": {
+      "shortform": "BWP",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/bw.svg>"
+    },
+    "Brazilian real": {
+      "shortform": "BRL",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/br.svg>"
+    },
+    "Brunei dollar": {
+      "shortform": "BND",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/bn.svg>"
+    },
+    "Canadian dollar": {
+      "shortform": "CAD",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/ca.svg>"
+    },
+    "Chilean peso": {
+      "shortform": "CLP",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/cl.svg>"
+    },
+    "Chinese yuan": {
+      "shortform": "CNY",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/cn.svg>"
+    },
+    "Colombian peso": {
+      "shortform": "COP",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/co.svg>"
+    },
+    "Czech koruna": {
+      "shortform": "CZK",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/cz.svg>"
+    },
+    "Danish krone": {
+      "shortform": "DKK",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/dk.svg>"
+    },
+    "Euro": {
+      "shortform": "EUR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/eu.svg>"
+    },
+    "Indian rupee": {
+      "shortform": "INR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/in.svg>"
+    },
+    "Israeli New Shekel": {
+      "shortform": "ILS",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/il.svg>"
+    },
+    "Japanese yen": {
+      "shortform": "JPY",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/jp.svg>"
+    },
+    "Korean won": {
+      "shortform": "KRW",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/kr.svg>"
+    },
+    "Kuwaiti dinar": {
+      "shortform": "KWD",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/kw.svg>"
+    },
+    "Malaysian ringgit": {
+      "shortform": "MYR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/my.svg>"
+    },
+    "Mauritian rupee": {
+      "shortform": "MUR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/mu.svg>"
+    },
+    "Mexican peso": {
+      "shortform": "MXN",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/mx.svg>"
+    },
+    "New Zealand dollar": {
+      "shortform": "NZD",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/nz.svg>"
+    },
+    "Norwegian krone": {
+      "shortform": "NOK",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/no.svg>"
+    },
+    "Omani rial": {
+      "shortform": "OMR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/om.svg>"
+    },
+    "Peruvian sol": {
+      "shortform": "PEN",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/pe.svg>"
+    },
+    "Philippine peso": {
+      "shortform": "PHP",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/ph.svg>"
+    },
+    "Polish zloty": {
+      "shortform": "PLN",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/pl.svg>"
+    },
+    "Qatari riyal": {
+      "shortform": "QAR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/qa.svg>"
+    },
+    "Russian ruble": {
+      "shortform": "RUB",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/ru.svg>"
+    },
+    "Saudi Arabian riyal": {
+      "shortform": "SAR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/sa.svg>"
+    },
+    "Singapore dollar": {
+      "shortform": "SGD",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/sg.svg>"
+    },
+    "South African rand": {
+      "shortform": "ZAR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/za.svg>"
+    },
+    "Swedish krona": {
+      "shortform": "SEK",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/se.svg>"
+    },
+    "Swiss franc": {
+      "shortform": "CHF",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/ch.svg>"
+    },
+    "Thai baht": {
+      "shortform": "THB",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/th.svg>"
+    },
+    "Trinidadian dollar": {
+      "shortform": "TTD",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/tt.svg>"
+    },
+    "U.A.E. dirham": {
+      "shortform": "AED",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/ae.svg>"
+    },
+    "U.K. pound": {
+      "shortform": "GBP",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/gb.svg>"
+    },
+    "U.S. dollar": {
+      "shortform": "USD",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/us.svg>"
+    },
+    "Uruguayan peso": {
+      "shortform": "UYU",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/uy.svg>"
+    },
+    "Bahrain dinar": {
+      "shortform": "BHD",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/bh.svg>"
+    },
+    "Bolivar Fuerte": {
+      "shortform": "VEF",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/ve.svg>"
+    },
+    "Hungarian forint": {
+      "shortform": "HUF",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/hu.svg>"
+    },
+    "Icelandic krona": {
+      "shortform": "ISK",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/is.svg>"
+    },
+    "Indonesian rupiah": {
+      "shortform": "IDR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/id.svg>"
+    },
+    "Iranian rial": {
+      "shortform": "IRR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/ir.svg>"
+    },
+    "Kazakhstani tenge": {
+      "shortform": "KZT",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/kz.svg>"
+    },
+    "Libyan dinar": {
+      "shortform": "LYD",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/ly.svg>"
+    },
+    "Nepalese rupee": {
+      "shortform": "NPR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/np.svg>"
+    },
+    "Pakistani rupee": {
+      "shortform": "PKR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/pk.svg>"
+    },
+    "Sri Lankan rupee": {
+      "shortform": "LKR",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/lk.svg>"
+    },
+    "Tunisian dinar": {
+      "shortform": "TND",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/tn.svg>"
+    },
+    "Bolivar Soberano": {
+      "shortform": "VES",
+      "img":"<https://flagicons.lipis.dev/flags/4x3/ve.svg>"
+    }
+}

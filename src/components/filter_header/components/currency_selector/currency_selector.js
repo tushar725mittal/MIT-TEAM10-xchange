@@ -7,11 +7,11 @@ function CurrencySelector() {
                 <option>USD</option>
                 <option>INR</option>
                 <option>LKR</option>
-            </select> 
+            </select>
             <div className='text-container'> V/S</div>
             <select className='currency-selector'>
-                <option>USD</option>
                 <option>INR</option>
+                <option>AUD</option>
                 <option>LKR</option>
             </select>
         </div>

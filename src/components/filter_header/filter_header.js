@@ -9,12 +9,12 @@ class FilterHeader extends React.Component {
     constructor(props) {
         super(props);
         // console.log(props.filterType);
-        this.filterType = props.filterType;
+        this.FilterType = props.FilterType;
 
     }
 
-    filterType() {
-        // console.log("used");
+    FilterType() {
+
     }
 
     render() {
@@ -22,10 +22,10 @@ class FilterHeader extends React.Component {
             <div className='header-box'>
                 <div className="filterHeader">
                     <CurrencySelector />
-                    <WMQY type="W" filterType={this.filterType} />
-                    <WMQY type="M" filterType={this.filterType} />
-                    <WMQY type="Q" filterType={this.filterType} />
-                    <WMQY type="Y" filterType={this.filterType} />
+                    <WMQY type="W" filterType={this.FilterType} />
+                    <WMQY type="M" filterType={this.FilterType} />
+                    <WMQY type="Q" filterType={this.FilterType} />
+                    <WMQY type="Y" filterType={this.FilterType} />
                     <div>Year: <YearSelector /></div>
 
                     <div>
