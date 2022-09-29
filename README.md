@@ -55,3 +55,8 @@ python backend.py
 ```
 npm start
 ```
+
+
+## Progress on frontend 
+- Static UI working, with dropdowns for currency selection, date range selection and radio buttons for selecting the type of data to be displayed.
+- API calls to backend are under progress, with backend being fully functional.
