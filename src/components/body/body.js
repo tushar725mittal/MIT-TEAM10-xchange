@@ -7,13 +7,9 @@ class Body extends React.Component {
     render() {
         return (
             <div className='body'>
-                <div className='div1'>
-                    <LineChart />
-                </div>
-                <div  className='div1'>
-                    <ConversionCard />
-                </div>
-            </div>
+                <LineChart />
+                <ConversionCard />
+            </div >
         )
     }
 }
