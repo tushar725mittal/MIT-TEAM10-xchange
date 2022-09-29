@@ -3,8 +3,49 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0 10%;
+    height: 50px;
+    background: #3b3b3b;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 15px;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.filterHeader:hover {
+    box-shadow: 0% 10% 65% -40%;
+    transform: scale(1.1);
+    background: #0a0934;
+  }
+
+.filterHeader::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -1%;
+    width: 7%;
+    height: 70px;
+    background: linear-gradient(90deg, transparent, #ffffff71,transparent);
+    transition: all 1s;
+    z-index: 1;
+    transform: translateX(-120px) skew(-20deg);
+}
+
+
+.filterHeader:hover::before {
+    
+    transform: translateX(1200px) skew(-20deg);
+}
+
+/* .wmqy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 20px;
     height: 50px;
     background-color: #f5f5f5;
     border-bottom: 1px solid #e0e0e0;
-}
+} */
