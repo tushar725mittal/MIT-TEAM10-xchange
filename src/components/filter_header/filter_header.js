@@ -6,15 +6,26 @@ import YearSelector from './components/year_selector/year_selector';
 import CustomDatePicker from './components/date_picker/date_picker';
 
 class FilterHeader extends React.Component {
+    constructor(props) {
+        super(props);
+        // console.log(props.filterType);
+        this.filterType = props.filterType;
+
+    }
+
+    filterType() {
+        // console.log("used");
+    }
+
     render() {
         return (
             <div className='header-box'>
                 <div className="filterHeader">
                     <CurrencySelector />
-                    <WMQY type="W" />
-                    <WMQY type="M" />
-                    <WMQY type="Q" />
-                    <WMQY type="Y" />
+                    <WMQY type="W" filterType={this.filterType} />
+                    <WMQY type="M" filterType={this.filterType} />
+                    <WMQY type="Q" filterType={this.filterType} />
+                    <WMQY type="Y" filterType={this.filterType} />
                     <div>Year: <YearSelector /></div>
 
                     <div>
