@@ -48,16 +48,16 @@ export default function ConversionCard() {
         <select className="currency-selector">
           {/* {
             () => {
-              var l = $("#currency-selector");
-              $.each
+              var l = [];
+              l.each((key,value ) => {
                 var currency = currency_json[key]
-                l += <option value={currency['DZD']}>{currency.name}</option>
+                l.append(('<option>',{ value:currency['shortform'], text:currency['shortform']}))
 
-              } 
-              // console.log(l)  
-              // return l;
-              } */}
+              })}} */}
+
+              <option> USD</option>
             
+
           
         </select>
       </div>
