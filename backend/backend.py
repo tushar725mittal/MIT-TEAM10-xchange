@@ -129,6 +129,36 @@ def get_value_in_date_range(
     return values
 
 
+def get_wmqy_data(db, wmqy, currency_to, currency_from, startdate):
+    """
+    params:
+        db: Database, wmqy: str, currency_to: str, currency_from: str, startdate: str
+        if wmqy is "w" then return the value of currency_to in the last week
+        if wmqy is "m" then return the value of currency_to in the last month
+        if wmqy is "q" then return the value of currency_to in the last quarter
+        if wmqy is "y" then return the value of currency_to in the last year
+    """
+    if wmqy == "w":
+        date_end = datetime.datetime.strptime(startdate, "%Y-%m-%d")
+        date_begin = date_end - datetime.timedelta(days=7)
+    elif wmqy == "m":
+        date_end = datetime.datetime.strptime(startdate, "%Y-%m-%d")
+        date_begin = date_end - datetime.timedelta(days=30)
+    elif wmqy == "q":
+        date_end = datetime.datetime.strptime(startdate, "%Y-%m-%d")
+        date_begin = date_end - datetime.timedelta(days=90)
+    elif wmqy == "y":
+        date_end = datetime.datetime.strptime(startdate, "%Y-%m-%d")
+        date_begin = date_end - datetime.timedelta(days=365)
+    else:
+        return None
+
+    date_end = datetime.datetime.strftime(date_end, "%Y-%m-%d")
+    date_begin = datetime.datetime.strftime(date_begin, "%Y-%m-%d")
+
+    return get_value_in_date_range(db, date_begin, date_end, currency_from, currency_to)
+
+
 @app.route("/", methods=["GET"])
 def something():
     return "Hello World"
@@ -177,6 +207,25 @@ def get_data_in_date_range() -> dict:
     # make response
     response = {"data": data}
     print(response)
+    return response
+
+
+@app.route("/get_wmqy", methods=["GET", "POST"])
+def get_wmqy() -> dict:
+    """
+    Get weekly, monthly, quarterly, yearly data starting from a specific date range
+    """
+    global db
+    params = request.get_json()
+    data = get_wmqy_data(
+        db,
+        params["wmqy"],
+        params["currency_to"],
+        params["currency_from"],
+        params["date"],
+    )
+    # make response
+    response = {"data": data}
     return response
 
 
