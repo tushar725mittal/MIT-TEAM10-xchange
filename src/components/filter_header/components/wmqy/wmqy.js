@@ -5,7 +5,7 @@ function WMQY(props) {
     }
     return (
         <div>
-            <button onClick={handleClick}>{props.type}</button>
+            <button id="button-container" onClick={handleClick}>{props.type}</button>
         </div>
     )
 }

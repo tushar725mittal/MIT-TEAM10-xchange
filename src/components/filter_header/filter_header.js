@@ -20,12 +20,15 @@ class FilterHeader extends React.Component {
     render() {
         return (
             <div className='header-box'>
-                <div className="filterHeader">
+                <div className='filterHeader'>
                     <CurrencySelector />
-                    <WMQY type="W" filterType={this.filterType} />
-                    <WMQY type="M" filterType={this.filterType} />
-                    <WMQY type="Q" filterType={this.filterType} />
-                    <WMQY type="Y" filterType={this.filterType} />
+                    <div className='filters'>
+                        <WMQY type="Weekly" filterType={this.filterType} />
+                        <WMQY type="Monthly" filterType={this.filterType} />
+                        <WMQY type="Quarterly" filterType={this.filterType} />
+                        <WMQY type="Yearly" filterType={this.filterType} />
+                    </div>
+                    
                     <div>Year: <YearSelector /></div>
 
                     <div>

@@ -14,6 +14,12 @@
     overflow: hidden;
 }
 
+.filters {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+/* 
 .filterHeader:hover {
     box-shadow: 0% 10% 65% -40%;
     transform: scaleY(1.1);
@@ -41,7 +47,7 @@
     
     transform: translateX(1550px) skew(-20deg);
     overflow: hidden;
-}
+} */
 
 /* .wmqy {
     display: flex;
