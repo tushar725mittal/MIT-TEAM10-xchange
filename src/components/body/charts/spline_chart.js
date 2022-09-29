@@ -5,18 +5,37 @@ import {
 } from '@syncfusion/ej2-react-charts';
 import { get_data_range, get_data_range_wmqy } from '../../../services/data_fetch';
 
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2)
+        month = '0' + month;
+    if (day.length < 2)
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+
 function SplineChart(props) {
-    console.log(props);
+    const [data, setData] = useState([
+    ]);
+
     // console.log(props.type);
     useEffect(() => {
 
         if (props.type == "") {
-            console.log(props.type)
-            console.log(Date(props.startDate).toString())
-            get_data_range({ currency_from: 'EUR', currency_to: 'INR', date_begin: '2020-01-01', date_end: '2020-12-31' }).then((newData) => {
+            // console.log(props.type)
+
+            get_data_range({ currency_from: 'EUR', currency_to: 'INR', date_begin: formatDate(props.startDate), date_end: formatDate(props.endDate) }).then((newData) => {
 
                 setData(newData['data'])
-                console.log(data[0]);
+                console.log(newData['data'])
+                console.log(data)
+
             });
         }
         else {
@@ -24,13 +43,12 @@ function SplineChart(props) {
 
                 setData(newData['data'])
                 console.log(newData['data'])
-                console.log(data[0]);
+
+                // console.log(data[0]);
             });
         }
     }, [props]);
 
-    const [data, setData] = useState([
-    ]);
 
 
 
