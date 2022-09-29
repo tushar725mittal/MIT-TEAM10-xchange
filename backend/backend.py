@@ -129,7 +129,7 @@ def get_value_in_date_range(
     return values
 
 
-def get_wmqy_data(db, wmqy, currency_to, currency_from, startdate):
+def get_wmqy_data(db, wmqy, currency_to, currency_from, startdate, n=1):
     """
     params:
         db: Database, wmqy: str, currency_to: str, currency_from: str, startdate: str
@@ -138,18 +138,19 @@ def get_wmqy_data(db, wmqy, currency_to, currency_from, startdate):
         if wmqy is "q" then return the value of currency_to in the last quarter
         if wmqy is "y" then return the value of currency_to in the last year
     """
+    wmqy = wmqy.lower()
     if wmqy == "w":
         date_end = datetime.datetime.strptime(startdate, "%Y-%m-%d")
-        date_begin = date_end - datetime.timedelta(days=7)
+        date_begin = date_end - datetime.timedelta(days=7 * n)
     elif wmqy == "m":
         date_end = datetime.datetime.strptime(startdate, "%Y-%m-%d")
-        date_begin = date_end - datetime.timedelta(days=30)
+        date_begin = date_end - datetime.timedelta(days=30 * n)
     elif wmqy == "q":
         date_end = datetime.datetime.strptime(startdate, "%Y-%m-%d")
-        date_begin = date_end - datetime.timedelta(days=90)
+        date_begin = date_end - datetime.timedelta(days=90 * n)
     elif wmqy == "y":
         date_end = datetime.datetime.strptime(startdate, "%Y-%m-%d")
-        date_begin = date_end - datetime.timedelta(days=365)
+        date_begin = date_end - datetime.timedelta(days=365 * n)
     else:
         return None
 
