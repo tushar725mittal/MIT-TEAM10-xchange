@@ -14,12 +14,12 @@
     overflow: hidden;
 }
 
-.filterHeader:hover {
+/* .filterHeader:hover {
     box-shadow: 0% 10% 65% -40%;
     transform: scaleY(1.1);
     background: #0df3e4;
     overflow: hidden;
-  }
+  } */
 
 .filterHeader::before {
     content: "";
@@ -30,18 +30,18 @@
     left: -1%;
     width: 7%;
     height: 65px;
-    background: linear-gradient(90deg, transparent, #ffffff71,transparent);
+    background: linear-gradient(90deg, transparent, #ffffff71, transparent);
     transition: all 1s;
     z-index: 1;
     transform: translateX(-30px) skew(-20deg);
 }
 
 
-.filterHeader:hover::before {
-    
+/* .filterHeader:hover::before {
+
     transform: translateX(1550px) skew(-20deg);
     overflow: hidden;
-}
+} */
 
 /* .wmqy {
     display: flex;

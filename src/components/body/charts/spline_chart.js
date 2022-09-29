@@ -7,10 +7,12 @@ import { get_data_range, get_data_range_wmqy } from '../../../services/data_fetc
 
 function SplineChart(props) {
     console.log(props);
+    // console.log(props.type);
     useEffect(() => {
 
         if (props.type == "") {
             console.log(props.type)
+            console.log(Date(props.startDate).toString())
             get_data_range({ currency_from: 'EUR', currency_to: 'INR', date_begin: '2020-01-01', date_end: '2020-12-31' }).then((newData) => {
 
                 setData(newData['data'])

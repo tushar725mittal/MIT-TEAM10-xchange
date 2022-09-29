@@ -20,11 +20,25 @@ function App() {
 
   useEffect(() => { }, [tft]);
 
+  const [[startDate, endDate], setDateFilter] = useState([new Date(), new Date()]);
+
+  const DateFilter = (startDate, endDate) => {
+
+    var startDate = startDate;
+    var endDate = endDate;
+
+    console.log("used");
+    console.log(endDate);
+    setDateFilter([startDate, endDate]);
+  }
+
+  useEffect(() => { }, [endDate, startDate]);
+
 
   return (
     <div>
-      <FilterHeader FilterType={FilterType} />
-      <Body type={tft} />
+      <FilterHeader FilterType={FilterType} DateFilter={DateFilter} />
+      <Body type={tft} startDate={startDate} endDate={endDate} />
     </div>
   )
 }

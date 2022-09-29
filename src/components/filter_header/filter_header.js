@@ -29,7 +29,7 @@ class FilterHeader extends React.Component {
                     <div>Year: <YearSelector /></div>
 
                     <div>
-                        <CustomDatePicker />
+                        <CustomDatePicker DateFilter={this.props.DateFilter} />
                     </div>
 
                 </div>
