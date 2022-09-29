@@ -38,6 +38,8 @@ The flask api is also depl
 The Tests for the flask app are in ```./backend/backend_tests.py```, and can be run using ```python backend_tests.py```. The tests for automation are in ```./automation/automate_tests.py```, and can be run using ```python automate_tests.py```.
 
 ### Backend is fully functional with all requirements, for conversion of single currency with usd, conversion between any two currencies, option to select date range and conversion of multiple currencies with usd or any other currency. And ability to get daily, weekly, monthly and yearly data of any currency with any other currency.
+api is also hosted at : Replit [https://mit-team10-xchange.jxt1n.repl.co/]
+
 
 <br>
 
