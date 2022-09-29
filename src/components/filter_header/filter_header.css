@@ -11,17 +11,20 @@
     margin-top: 1%;
     margin-left: 1%;
     margin-right: 1%;
+    overflow: hidden;
 }
 
 .filterHeader:hover {
     box-shadow: 0% 10% 65% -40%;
     transform: scaleY(1.1);
     background: #0a0934;
+    overflow: hidden;
   }
 
 .filterHeader::before {
     content: "";
     position: absolute;
+    overflow: hidden;
     display: block;
     top: 0;
     left: -1%;
@@ -30,13 +33,14 @@
     background: linear-gradient(90deg, transparent, #ffffff71,transparent);
     transition: all 1s;
     z-index: 1;
-    transform: translateX(-120px) skew(-20deg);
+    transform: translateX(-30px) skew(-20deg);
 }
 
 
 .filterHeader:hover::before {
     
-    transform: translateX(1200px) skew(-20deg);
+    transform: translateX(1550px) skew(-20deg);
+    overflow: hidden;
 }
 
 /* .wmqy {

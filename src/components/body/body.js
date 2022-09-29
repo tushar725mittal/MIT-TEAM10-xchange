@@ -8,7 +8,10 @@ class Body extends React.Component {
         return (
             <div className='body'>
                 <LineChart />
-                <ConversionCard />
+                <div className='cc-card'>
+                    <ConversionCard />
+                </div>
+                
             </div >
         )
     }
