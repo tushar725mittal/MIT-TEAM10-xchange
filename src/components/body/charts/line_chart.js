@@ -5,6 +5,11 @@ import {
 } from '@syncfusion/ej2-react-charts';
 
 function LineChart() {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+
+    }, [data]);
     var salseData = [
         { month: 'Jan', sales: 35 }, { month: 'Feb', sales: 28 },
         { month: 'Mar', sales: 34 }, { month: 'Apr', sales: 32 },
