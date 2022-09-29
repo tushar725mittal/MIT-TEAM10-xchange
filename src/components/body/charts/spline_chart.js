@@ -3,17 +3,29 @@ import {
     ChartComponent, Inject, SeriesCollectionDirective, SeriesDirective, Category, Legend,
     DataLabel, Tooltip, SplineAreaSeries, Zoom
 } from '@syncfusion/ej2-react-charts';
-import { get_data_range } from '../../../services/data_fetch';
+import { get_data_range, get_data_range_wmqy } from '../../../services/data_fetch';
 
-function SplineChart() {
+function SplineChart(props) {
+    console.log(props);
     useEffect(() => {
 
-        get_data_range({ currency_from: 'EUR', currency_to: 'INR', date_begin: '2020-01-01', date_end: '2020-12-31' }).then((newData) => {
+        if (props.type == "") {
+            console.log(props.type)
+            get_data_range({ currency_from: 'EUR', currency_to: 'INR', date_begin: '2020-01-01', date_end: '2020-12-31' }).then((newData) => {
 
-            setData(newData['data'])
-            console.log(data[0]);
-        });
-    }, []);
+                setData(newData['data'])
+                console.log(data[0]);
+            });
+        }
+        else {
+            get_data_range_wmqy({ currency_from: 'EUR', currency_to: 'INR', date_begin: '2020-01-01', type: props.type }).then((newData) => {
+
+                setData(newData['data'])
+                console.log(newData['data'])
+                console.log(data[0]);
+            });
+        }
+    }, [props]);
 
     const [data, setData] = useState([
     ]);
