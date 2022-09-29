@@ -5,6 +5,13 @@ from dotenv import load_dotenv
 import os
 
 
+def get_creds():
+    load_dotenv(dotenv_path="../.env")
+    mongo_id = os.getenv("MONGO_ID")
+    mongo_password = os.getenv("MONGO_PASSWORD")
+    return mongo_id, mongo_password
+
+
 def load_merged():
     df = pd.read_csv("../data/merged.csv")
     df = df.set_index("Date")
@@ -15,7 +22,6 @@ def load_merged():
 def get_currency_dict(df):
     with open("../data/currencies.json", "r") as f:
         currencies = json.load(f)
-
     return currencies
 
 
@@ -45,10 +51,7 @@ def insert_data(db, df, currencies):
 
 
 def main():
-    load_dotenv(dotenv_path="../.env")
-    # get mongo id and password from .env
-    mongo_id = os.getenv("MONGO_ID")
-    mongo_password = os.getenv("MONGO_PASSWORD")
+    mongo_id, mongo_password = get_creds()
     df = load_merged()
     currencies = get_currency_dict(df)
     db = init_db(mongo_id, mongo_password)
