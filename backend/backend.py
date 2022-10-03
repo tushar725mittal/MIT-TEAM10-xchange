@@ -119,12 +119,32 @@ def get_value_in_date_range(
             del value["_id"]
 
         values = []
-        for i in range(len(values_from)):
-            try:
-                value = values_to[i]["value"] / values_from[i]["value"]
-            except ZeroDivisionError:
-                value = None
-            values.append({"date": values_from[i]["date"], "value": value})
+        # print(values_from)
+        # print(values_to)
+        len_values_from = len(values_from)
+        len_values_to = len(values_to)
+        j_prev = 0
+        for i in range(len_values_from):
+            for j in range(j_prev, len_values_to):
+                # print(values_from[i]["date"], values_to[j]["date"])
+                if values_from[i]["date"] == values_to[j]["date"]:
+                    try:
+                        curr_value = values_to[j]["value"] / values_from[i]["value"]
+                    except ZeroDivisionError:
+                        curr_value = None
+                    if curr_value is not None:
+                        values.append(
+                            {"date": values_from[i]["date"], "value": curr_value}
+                        )
+                    values.append(
+                        {
+                            "date": values_from[i]["date"],
+                            "value": values_to[j]["value"] / values_from[i]["value"],
+                        }
+                    )
+                    # print("appended")
+                    j_prev = j
+                    break
 
     return values
 
