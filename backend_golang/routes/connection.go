@@ -2,6 +2,7 @@ package routes
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"os"
 
@@ -40,6 +41,7 @@ func ConnectToServer() *mongo.Database {
 	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println("Connected to MongoDB!")
 	return client.Database("northerntrust")
 
 }

@@ -3,6 +3,7 @@ package routes
 import (
 	"context"
 	"log"
+	"strconv"
 	"time"
 
 	"backend_golang/models"
@@ -118,6 +119,49 @@ func TwoCurrDataRange(currencyTo string, currencyFrom string, dateFrom time.Time
 	}
 	return finalResult
 
+}
+
+func GetWMQY(c *gin.Context) {
+	dateTo, err := time.Parse("2006-01-02", c.Query("dateto"))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	n_count := c.Query("n_count")
+	if n_count == "" {
+		n_count = "1"
+	}
+	n, err := strconv.Atoi(n_count)
+	if err != nil {
+		c.JSON(200, gin.H{
+			"error": "n_count must be an integer",
+		})
+		return
+	}
+	// n_count should be a number
+
+	type_wmqy := c.Query("type")
+	var dateFrom time.Time
+	if type_wmqy == "W" {
+		dateFrom = dateTo.AddDate(0, 0, -7*n)
+	} else if type_wmqy == "M" {
+		dateFrom = dateTo.AddDate(0, -1*n, 0)
+	} else if type_wmqy == "Q" {
+		dateFrom = dateTo.AddDate(0, -3*n, 0)
+	} else if type_wmqy == "Y" {
+		dateFrom = dateTo.AddDate(-1*n, 0, 0)
+	} else {
+		c.JSON(200, gin.H{
+			"error": "type should be W, M, Q or Y",
+		})
+		return
+	}
+	currencyTo := c.Query("currencyTo")
+	currencyFrom := c.Query("currencyFrom")
+	results := TwoCurrDataRange(currencyTo, currencyFrom, dateFrom, dateTo)
+	c.JSON(200, gin.H{
+		"results": results,
+	})
 }
 
 func GetAllCollections(c *gin.Context) {

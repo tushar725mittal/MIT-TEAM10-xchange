@@ -16,6 +16,9 @@ func main() {
 	router.GET("/getTwoCurrFromDateRange", routes.GetTwoCurrFromDateRange)
 	// link to test the api
 	// http://localhost:8080/getTwoCurrFromDateRange?currencyTo=USD&currencyFrom=EUR&datefrom=2020-01-01&dateto=2020-01-02
+	router.GET("/getWMQY", routes.GetWMQY)
+	// link to test the api
+	// http://localhost:8080/getWMQY?dateto=2020-01-02&type=W&currencyTo=INR&currencyFrom=EUR&n_count=4
 
 	router.Run(":8080")
 }
