@@ -2,7 +2,6 @@ package routes
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"time"
 
@@ -39,8 +38,9 @@ func SingleCurrDataRange(currency string, dateFrom time.Time, dateTo time.Time) 
 	if err != nil {
 		log.Fatal(err)
 	}
-	ctx := context.Background()
-	for cur.Next(ctx) {
+	defer cur.Close(context.Background())
+
+	for cur.Next(context.Background()) {
 		var result models.Record
 		err := cur.Decode(&result)
 		if err != nil {
@@ -48,7 +48,7 @@ func SingleCurrDataRange(currency string, dateFrom time.Time, dateTo time.Time) 
 		}
 		results = append(results, result)
 	}
-	fmt.Println(results)
+
 	return results
 }
 
@@ -73,14 +73,16 @@ func TwoCurrDataRange(currencyTo string, currencyFrom string, dateFrom time.Time
 	filter := bson.M{"date": bson.M{"$gte": dateFrom, "$lte": dateTo}}
 	ctx := context.Background()
 	collection := database.Collection(currencyTo)
-	curTo, err := collection.Find(context.Background(), filter)
+	curTo, err := collection.Find(ctx, filter)
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer curTo.Close(ctx)
 	currFrom, err := database.Collection(currencyFrom).Find(ctx, filter)
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer currFrom.Close(ctx)
 	var resultFrom []models.Record
 	var resultTo []models.Record
 	for curTo.Next(ctx) {
@@ -121,6 +123,7 @@ func TwoCurrDataRange(currencyTo string, currencyFrom string, dateFrom time.Time
 func GetAllCollections(c *gin.Context) {
 	ctx := context.Background()
 	collections, err := database.ListCollectionNames(ctx, bson.M{})
+
 	if err != nil {
 		log.Fatal(err)
 	}
