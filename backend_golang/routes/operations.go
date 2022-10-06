@@ -3,6 +3,7 @@ package routes
 import (
 	"context"
 	"log"
+	"net/http"
 	"strconv"
 	"time"
 
@@ -17,27 +18,42 @@ var database = ConnectToServer()
 func GetSingleCurrDataFromRange(c *gin.Context) {
 	dateFrom, err := time.Parse("2006-01-02", c.Query("datefrom"))
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
 	}
 	dateTo, err := time.Parse("2006-01-02", c.Query("dateto"))
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
 	}
 	currency := c.Query("currency")
-	results := SingleCurrDataRange(currency, dateFrom, dateTo)
+	results, err := SingleCurrDataRange(currency, dateFrom, dateTo)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
+	}
 	c.JSON(200, gin.H{
 		"results": results,
 	})
 
 }
 
-func SingleCurrDataRange(currency string, dateFrom time.Time, dateTo time.Time) []models.Record {
+func SingleCurrDataRange(currency string, dateFrom time.Time, dateTo time.Time) ([]models.Record, error) {
 	filter := bson.M{"date": bson.M{"$gte": dateFrom, "$lte": dateTo}}
 	var results []models.Record
 	collection := database.Collection(currency)
 	cur, err := collection.Find(context.Background(), filter)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		return nil, err
 	}
 	defer cur.Close(context.Background())
 
@@ -45,43 +61,61 @@ func SingleCurrDataRange(currency string, dateFrom time.Time, dateTo time.Time) 
 		var result models.Record
 		err := cur.Decode(&result)
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
+			return nil, err
 		}
 		results = append(results, result)
 	}
 
-	return results
+	return results, nil
 }
 
 func GetTwoCurrFromDateRange(c *gin.Context) {
 	dateFrom, err := time.Parse("2006-01-02", c.Query("datefrom"))
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
 	}
 	dateTo, err := time.Parse("2006-01-02", c.Query("dateto"))
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
 	}
 	currencyTo := c.Query("currencyTo")
 	currencyFrom := c.Query("currencyFrom")
-	results := TwoCurrDataRange(currencyTo, currencyFrom, dateFrom, dateTo)
+	results, err := TwoCurrDataRange(currencyTo, currencyFrom, dateFrom, dateTo)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
+	}
+
 	c.JSON(200, gin.H{
 		"results": results,
 	})
 }
 
-func TwoCurrDataRange(currencyTo string, currencyFrom string, dateFrom time.Time, dateTo time.Time) []models.Record {
+func TwoCurrDataRange(currencyTo string, currencyFrom string, dateFrom time.Time, dateTo time.Time) ([]models.Record, error) {
 	filter := bson.M{"date": bson.M{"$gte": dateFrom, "$lte": dateTo}}
 	ctx := context.Background()
 	collection := database.Collection(currencyTo)
 	curTo, err := collection.Find(ctx, filter)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		return nil, err
 	}
 	defer curTo.Close(ctx)
 	currFrom, err := database.Collection(currencyFrom).Find(ctx, filter)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		return nil, err
 	}
 	defer currFrom.Close(ctx)
 	var resultFrom []models.Record
@@ -90,7 +124,8 @@ func TwoCurrDataRange(currencyTo string, currencyFrom string, dateFrom time.Time
 		var result models.Record
 		err := curTo.Decode(&result)
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
+			return nil, err
 		}
 		resultTo = append(resultTo, result)
 	}
@@ -98,7 +133,8 @@ func TwoCurrDataRange(currencyTo string, currencyFrom string, dateFrom time.Time
 		var result models.Record
 		err := currFrom.Decode(&result)
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
+			return nil, err
 		}
 		resultFrom = append(resultFrom, result)
 	}
@@ -117,14 +153,18 @@ func TwoCurrDataRange(currencyTo string, currencyFrom string, dateFrom time.Time
 			}
 		}
 	}
-	return finalResult
+	return finalResult, nil
 
 }
 
 func GetWMQY(c *gin.Context) {
 	dateTo, err := time.Parse("2006-01-02", c.Query("dateto"))
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
 	}
 
 	n_count := c.Query("n_count")
@@ -151,14 +191,23 @@ func GetWMQY(c *gin.Context) {
 	} else if type_wmqy == "Y" {
 		dateFrom = dateTo.AddDate(-1*n, 0, 0)
 	} else {
-		c.JSON(200, gin.H{
-			"error": "type should be W, M, Q or Y",
-		})
+		c.JSON(
+			http.StatusInternalServerError,
+			gin.H{
+				"error": "type should be W, M, Q or Y",
+			})
 		return
 	}
 	currencyTo := c.Query("currencyTo")
 	currencyFrom := c.Query("currencyFrom")
-	results := TwoCurrDataRange(currencyTo, currencyFrom, dateFrom, dateTo)
+	results, err := TwoCurrDataRange(currencyTo, currencyFrom, dateFrom, dateTo)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
+	}
+
 	c.JSON(200, gin.H{
 		"results": results,
 	})
@@ -169,7 +218,12 @@ func GetAllCollections(c *gin.Context) {
 	collections, err := database.ListCollectionNames(ctx, bson.M{})
 
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError,
+			gin.H{
+				"error": err,
+			})
+		return
 	}
 	c.JSON(200, gin.H{
 		"collections": collections,
